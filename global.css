@@ -1,0 +1,108 @@
+* {
+    color: rgb(240, 240, 240);
+    text-align: center;
+}
+
+html, body {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: rgb(35, 35, 35);
+    overflow-y: scroll;
+}
+
+.container {
+    border-style: dashed;
+    border-width: 4px;
+    border-radius: 25px;
+    border-color: rgb(240, 240, 240);
+    box-shadow: 0 0 0 6px rgb(240, 240, 240);
+    margin: 25px;
+}
+
+.unit {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.unit:first-of-type {
+    margin-top: 15px;
+}
+
+.link {
+    padding: 0.5em 1em;
+}
+
+.link:link {
+    text-decoration: none;
+}
+
+.link:hover {
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.5s, 0.5s;
+    background-color: gray;
+    box-shadow: 0 0 4px 3px gray;
+}
+
+.photo {
+    border-radius: 10px;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+}
+
+.photo:hover {
+    cursor: pointer;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+    opacity: 0.5;
+}
+
+.flex-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#modal {
+    z-index: 1;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0); /* fallback */
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#modal-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-name: fade-in;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
